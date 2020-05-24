@@ -57,3 +57,30 @@ body{
   cursor: pointer;
   margin: 12px 0;
 }
+@media screen and (max-width: 600px) {
+  .login-box{
+    width: 140px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+  }
+  .login-box h1{
+    float: left;
+    font-size: 30px;
+    border-bottom: 4px solid #C65050;
+    margin-bottom: 30px;
+    padding: 10px 0;
+  }
+  .textbox input{
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 15px;
+    width: 50%;
+    float: left;
+    margin: 0 10px;
+  }
+}

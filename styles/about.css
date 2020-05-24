@@ -1,76 +1,185 @@
-@import "index.css";
+body{
+  font-family: 'Open Sans' sans-serif;
+}
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+nav{
+  height: 80px;
+  background: #000000;
+}
+nav img{
+  width: 190px;
+  position: absolute;
+  left: 5%;
+}
+nav ul{
+  float: right;
+  margin-right: 25px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 15px;
+}
+nav ul li a{
+  position: relative;
+  color: white;
+  font-size: 18px;
+  padding: 5px;
+  text-transform: uppercase;
+}
+nav ul li a:before{
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .2s linear;
+}
+nav ul li a:hover:before{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+label #btn,
+label #cancel{
+  color: white;
+  font-size: 30px;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 1118px) {
+  nav ul li a{
+    font-size: 17px;
+  }
+}
+@media (max-width: 940px) {
+  nav ul li a{
+    font-size: 17px;
+  }
+}
+@media (max-width: 860px) {
+  label #btn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color:#1e272e;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  #check:checked ~ ul{
+      left: 0;
+  }
+  #check:checked ~ label #btn{
+    display: none;
+  }
+  #check:checked ~ label #cancel{
+    display: block;
+  }
+}
+
 .cantent{
   margin: 0;
   padding: 0;
-  font-family: "montserrat", sans-serif;
+  font-family: "URW Chancery L", cursive;
+  background-color: #000;
 }
-.landing-page{
+.cantent h1{
+  margin-top: 1px;
+  text-align: center;
+  color: #fff;
+}
+.team-section{
   width: 100%;
   height: 100vh;
-  background: black;
-  position: relative;
+  display: flex;
+}
+.person{
+  flex: 1;
   overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: .6s;
 }
-.landing-page:after{
-  content: "";
+.person:hover{
+  flex: 3;
+}
+.person-pic{
   position: absolute;
-  width: 100%;
   height: 100%;
-  /* background: url(../img/1.jpg) no-repeat;
-  background-size: cover; */
-  background-image: url(../img/1.jpg);
-  background-size: cover;
-  opacity: .3;
-  animation: anim 25s linear infinite;
-}
-@keyframes anim {
-  50%{
-    transform: scale(2);
-  }
-  100%{
-    transform: scale(1);
-  }
-}
-.page-content{
-  position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  z-index: 1;
-  width: 100%;
-  max-width: 800px;
+  transform: translateX(-50%);
+  filter: grayscale(80%);
+  transition: .3s;
+}
+.person:hover .person-pic{
+  filter: grayscale(0);
+}
+.person-info{
+  position: absolute;
+  bottom: 10px;
   text-align: center;
-  padding: 0 40px;
-  box-sizing: border-box;
+  width: 100%;
+  opacity: 0;
+  transition: .2s;
 }
-.page-content h1{
-  color: #e74c3c;
-  text-transform: uppercase;
-  font-size: 50px;
-  font-weight: 900;
+.person:hover .person-info{
+  opacity: 1;
+  bottom: 30px;
+  transition-delay: .3s;
+}
+.person-info h2{
+  font-size: 30px;
+  color: white;
+}
+.person-info p{
+  font-size: 25px;
+  font-style: italic;
+  color: #bdc3c7;
+  margin-top: 8px;
   margin-bottom: 20px;
 }
-.page-content p{
-  color: #fff;
-  margin-bottom: 20px;
-}
-.page-content a{
+.socialmedia a{
   display: inline-block;
-  text-decoration: none;
-  color: #e74c3c;
-  border: 2px solid #e74c3c;
-  text-transform: uppercase;
-  padding: 10px 20px;
-  transition: 0.4s linear;
+  width: 40px;
+  height: 40px;
+  color: #333;
+  background-color: #1abc9c;
+  line-height: 40px;
+  border-radius: 50%;
+  margin: 0 6px;
+  font-size: 18px;
+  transition: .3s linear;
 }
-.page-content a:hover{
-  color: #fff;
-  background: #e74c3c;
-}
-.text{
-  padding: 10px;
-  text-align: justify;
-}
-.text div{
-  margin-bottom: 6px;
+.socialmedia a:hover{
+  color: #b8e994;
+  background-color: transparent;
+  transform: scale(1.5);
 }

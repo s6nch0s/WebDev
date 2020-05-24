@@ -107,6 +107,10 @@ label #cancel{
 
 
 @import "index.css";
+.fix{
+  background-color: #000;
+  padding-top: 1px;
+}
 .cantent{
   margin: 0;
   padding: 0;
@@ -118,6 +122,7 @@ label #cancel{
   background: black;
   position: relative;
   overflow: hidden;
+  margin-top: 0;
 }
 .landing-page:after{
   content: "";

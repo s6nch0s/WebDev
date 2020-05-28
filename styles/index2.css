@@ -8,32 +8,37 @@ body{
   list-style: none;
   text-decoration: none;
 }
-nav{
-  height: 80px;
-  background: #000000;
+.cantent{
+  padding:0;
+  margin: 0;
 }
-nav img{
+img{
   width: 190px;
   position: absolute;
   left: 5%;
 }
-nav ul{
-  float: right;
-  margin-right: 25px;
+.header{
+  height: 80px;
+  background: #000;
+  color: #fff;
+  padding: 0 20px;
 }
-nav ul li{
+.menu{
+  float: right;
+  margin-right: 100px;
   display: inline-block;
-  line-height: 80px;
   margin: 0 15px;
 }
-nav ul li a{
+.menu a{
   position: relative;
   color: white;
   font-size: 18px;
   padding: 5px;
   text-transform: uppercase;
+  line-height: 80px;
+  margin: 0 15px;
 }
-nav ul li a:before{
+.menu a:before{
   position: absolute;
   content: '';
   left: 0;
@@ -45,72 +50,63 @@ nav ul li a:before{
   transform-origin: right;
   transition: transform .2s linear;
 }
-nav ul li a:hover:before{
+.menu a:hover:before{
   transform: scaleX(1);
   transform-origin: left;
 }
-
-label #btn,
-label #cancel{
-  color: white;
+.show-menu-btn,.hide-menu-btn{
+  transition: 0.4s;
   font-size: 30px;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
   cursor: pointer;
   display: none;
 }
-#check{
-  display: none;
+.show-menu-btn{
+  float: right;
 }
-@media (max-width: 1118px) {
-  nav ul li a{
-    font-size: 17px;
-  }
+.show-menu-btn i{
+  line-height: 100px;
 }
-@media (max-width: 940px) {
-  nav ul li a{
-    font-size: 17px;
-  }
+.show-menu-btn:hover,
+.hide-menu-btn:hover{
+  color: #3498db;
 }
-@media (max-width: 860px) {
-  label #btn{
+
+#chk{
+  position: absolute;
+  visibility: hidden;
+  z-index: -1111;
+}
+
+@media screen and (max-width:800px) {
+  .show-menu-btn,.hide-menu-btn{
     display: block;
   }
-  ul{
+  .menu{
     position: fixed;
     width: 100%;
     height: 100vh;
-    background-color:#1e272e;
-    top: 80px;
-    left: -100%;
+    background: #333;
+    right: -100%;
+    top: 0;
     text-align: center;
-    transition: all .5s;
+    padding: 80px 0;
+    line-height: normal;
+    transition: 0.7s;
   }
-  nav ul li{
+  .menu a{
     display: block;
-    margin: 50px 0;
-    line-height: 30px;
+    padding: 20px;
   }
-  nav ul li a{
-    font-size: 20px;
+  .hide-menu-btn{
+    position: absolute;
+    top: 40px;
+    right: 40px;
   }
-  #check:checked ~ ul{
-      left: 0;
-  }
-  #check:checked ~ label #btn{
-    display: none;
-  }
-  #check:checked ~ label #cancel{
-    display: block;
+  #chk:checked ~ .menu{
+    right: 0;
   }
 }
 
-
-.fix{
-  background-color: #000;
-  padding-top: 1px;
-}
 .cantent{
   margin: 0;
   padding: 0;
@@ -191,7 +187,7 @@ label #cancel{
   display: block;
   box-sizing: border-box;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 .text h2{
   text-align: center;

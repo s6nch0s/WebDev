@@ -23,6 +23,11 @@ body{
   margin-bottom: 50px;
   padding: 13px 0;
 }
+#text{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
 .textbox{
   width: 100%;
   overflow: hidden;

@@ -2,13 +2,13 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>lab 1</title>
-    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
-    <link rel="stylesheet" href="styles/about.css">
+    <title>gallery</title>
+    <link rel="stylesheet" href="styles/gallery.css">
     <script src="https://kit.fontawesome.com/d07ed9bb47.js" crossorigin="anonymous"></script>
-    <script scr="js/data.js"></script>
+    <script type="text/javascript" src="js/gallery.js"></script>
   </head>
   <body>
+
     <!-- start nav menu -->
     <nav>
       <img src="img/logo.png">
@@ -27,6 +27,29 @@
     </nav>
     <!-- end nav menu -->
 
-    <button type="button" onclick="GetReq()">Click Me!</button>
-    <p id='text'></p>
-    <script src="js/data.js"></script>
+    <div class="fix"></div>
+
+    <div class="gallery">
+      <!-- <p>Here you can take a look at some pictures of publishings</p> -->
+      <div class="slider">
+        <div class="slides">
+          <div class="slide">
+            <img src="img/g1.jpg" alt="">
+          </div>
+          <div class="slide">
+            <img src="img/g2.jpg" alt="">
+          </div>
+          <div class="slide">
+            <img src="img/g3.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="img/g4.jpg" alt="">
+          </div>
+        </div>
+        <div onclick="goLeft()" class="btnLeft fas fa-chevron-left"></div>
+        <div onclick="goRight()" class="btnRight fas fa-chevron-right"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

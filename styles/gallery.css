@@ -1,0 +1,53 @@
+@import "navmenu.css";
+.gallery{
+  margin: 0;
+  padding: 0;
+  background: #2f3640;
+}
+/* .gallery p{
+  font-size: 45px;
+  text-align: center;
+  font-weight: 700;
+  color: #dfe4ea;
+  padding-bottom: 5px;
+} */
+.fix{
+  background-color: #000;
+  padding-top: 1px;
+}
+.slider{
+  position: relative;
+  width: 900px;
+  height: 766px;
+  overflow: hidden;
+  margin: auto;
+}
+.slides{
+    width: 2400px;
+    display: flex;
+}
+.slide{
+    width: 900px;
+    transition: 0.6s;
+}
+.btnLeft,.btnRight{
+  position: absolute;
+  width: 100px;
+  height: 766px;
+  top: 0;
+  font-size: 40px;
+  line-height: 650px !important;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #fff;
+}
+.btnLeft:hover, .btnRight:hover{
+  background: #000000b3;
+}
+.btnLeft{
+  left: 0;
+}
+.btnRight{
+  right: 0;
+}

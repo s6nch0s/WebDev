@@ -1,6 +1,7 @@
 ﻿import React, { Component } from 'react';
 import axios from 'axios';
 import './books.css'
+import { Link } from 'react-router-dom';
 
 export class Books extends Component {
     state = {
@@ -8,7 +9,6 @@ export class Books extends Component {
     }
     componentDidMount() {
         axios.get('https://localhost:5001/api/book').then(res => {
-            console.log(res)
             this.setState({
                 books: res.data
             })
@@ -32,8 +32,10 @@ export class Books extends Component {
                     <div className="center">No books</div>
                     )
         return (
-            <div>
-                <button />
+            <div className="BookMain">
+                <Link to="/addBook">
+                      <button type="submit" className="lol">Add Book</button>
+                </Link>
                 {booksList}
             </div>
         );

@@ -1,0 +1,33 @@
+.wrapper{
+    background-color: ;
+}
+.form-wrapper{
+  max-width: 600px;
+  margin: auto;
+  padding: 0 10px;
+  overflow: hidden;
+  margin-left: 375px;
+}
+input .fullName, .password, .email, .confirmpassword{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    /* margin: 16px 0; */
+    border: 0;
+    /* background: #2d3436; */
+    /* padding: 20px 40px; */
+    outline: none;
+    color: black;
+    transition: 0.5s;
+}
+.form-wrapper span{
+  padding-top: 1px;
+  font-size: 12px;
+  color: red;
+}
+/* .password{
+  margin-right: 30px;
+}
+.confirmpassword{
+  margin-right: 95px;
+ } */

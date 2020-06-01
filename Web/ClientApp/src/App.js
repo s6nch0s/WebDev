@@ -9,6 +9,7 @@ import ApiAuthorizationRoutes from './components/api-authorization/ApiAuthorizat
 import { ApplicationPaths } from './components/api-authorization/ApiAuthorizationConstants';
 import Books from './components/Books.js';
 import addBook from './components/addBook.js';
+import Registration from './components/Registration.js'
 
 import './custom.css'
 
@@ -22,6 +23,7 @@ export default class App extends Component {
             <Route exact path='/Counter' component={Counter} />
         <Route path='/Books' component={Books} />
         <Route path='/addBook' component={addBook} />
+        <Route path='/registration' component={Registration} />
         <AuthorizeRoute path='/fetch-data' component={FetchData} />
         <Route path={ApplicationPaths.ApiAuthorizationPrefix} component={ApiAuthorizationRoutes} />
       </Layout>

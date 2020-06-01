@@ -2,7 +2,12 @@
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
 }
-
+.DeleteBook{
+  background-color: brown;
+  color: white;
+  outline: none;
+  border: 0;
+}
 .card-component {
     background-color: brown;
 }

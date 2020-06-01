@@ -8,11 +8,19 @@ export class Books extends Component {
         books : []
     }
     componentDidMount() {
-        axios.get('https://localhost:5001/api/book').then(res => {
+        axios.get('api/book').then(res => {
             this.setState({
                 books: res.data
             })
         })
+    }
+    handleDelete(id){
+      var url = "api/book/delete/" + id;
+      axios({
+        method: 'delete',
+        url: url
+      });
+    window.location.reload(false);
     }
         render() {
             const { books } = this.state;
@@ -24,6 +32,7 @@ export class Books extends Component {
                                 <span className="card-title">{book.year}</span>
                                 <p>{book.name}</p>
                                 <p>{book.author}</p>
+                                <button type='submit' className="DeleteBook" onClick={() => this.handleDelete(book.id)}>Delete Book</button>
                             </div>
                         </div>
                     )
